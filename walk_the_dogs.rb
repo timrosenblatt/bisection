@@ -1,9 +1,4 @@
-require './taco'
-require './sneakers'
-require './shaggy'
-require './lala'
-require './walker'
-require 'set'
+require './requires'
 
 pack = Set.new
 

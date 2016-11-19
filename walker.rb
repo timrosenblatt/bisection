@@ -1,10 +1,12 @@
+require './requires'
+
 class Walker
   def initialize(pack)
     @pack = pack
   end
 
   def walk_dogs
-    puts "good dogs :)"
+    @pack.map &:walk
   end
 
   attr_reader :pack

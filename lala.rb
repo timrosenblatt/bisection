@@ -1,4 +1,4 @@
-require './dog'
+require './requires'
 
 class Lala < Dog
 
