@@ -18,3 +18,9 @@ puts 'All dogs walked!'
 clyde.feed_dogs
 
 puts 'All dogs fed'
+
+100.times do
+  clyde.walk_dogs
+end
+
+puts 'Lots of walking'

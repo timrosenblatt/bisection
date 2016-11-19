@@ -9,13 +9,19 @@ class Dog
   end
 
   def walk
-    @appetite += WALKING_ENERGY
+    if @appetite > EMPTY_STOMACH
+      raise ArgumentError, 'Needs to eat'
+    end
+
+    @appetite += self.class::WALKING_ENERGY
 
     :generic_walk
   end
 
   def eat
     @appetite = FULL_STOMACH
+
+    true
   end
 
   def full?

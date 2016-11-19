@@ -8,10 +8,19 @@ class Walker
   attr_reader :pack
 
   def walk_dogs
-    @pack.map &:walk
+    begin
+      @pack.map &:walk
+    rescue ArgumentError => e
+      if e.message =~ /eat/
+        feed_dogs
+        retry
+      end
+
+      raise
+    end
   end
 
   def feed_dogs
-    @pack.map &:eat
+    @pack.map(&:eat).all?
   end
 end
