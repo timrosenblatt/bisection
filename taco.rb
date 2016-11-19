@@ -8,4 +8,8 @@ class Taco < Dog
 
     :fast
   end
+
+  def hungry?
+    true
+  end
 end
