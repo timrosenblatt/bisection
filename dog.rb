@@ -9,7 +9,7 @@ class Dog
   end
 
   def walk
-    if @appetite > EMPTY_STOMACH
+    if hungry?
       raise ArgumentError, 'Needs to eat'
     end
 
@@ -26,5 +26,9 @@ class Dog
 
   def full?
     @appetite == FULL_STOMACH
+  end
+
+  def hungry?
+    @appetite > EMPTY_STOMACH
   end
 end
