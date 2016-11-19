@@ -1,28 +1,38 @@
 require_relative '../requires'
 
 describe Walker do
+  subject(:walker) { Walker.new dogs }
+
   describe 'walking the dogs' do
-    it 'works with one dog' do
-      dog = double
-      expect(dog).to receive :walk
+    let(:dogs) { [ dog ] }
+    let(:dog) { double('dog') }
 
-      Walker.new([dog]).walk_dogs
+    context 'with one dog' do
+      it 'works' do
+        expect(dog).to receive :walk
+
+        subject.walk_dogs
+      end
     end
 
-    it 'works with multiple dogs' do
-      first_dog = double
-      second_dog = double
+    context 'with two dogs' do
+      let(:dog2) { double 'second dog' }
+      let(:dogs) { [dog, dog2] }
 
-      expect(first_dog).to receive :walk
-      expect(second_dog).to receive :walk
+      it 'works with multiple dogs' do
+        expect(dog).to receive :walk
+        expect(dog2).to receive :walk
 
-      Walker.new([first_dog, second_dog]).walk_dogs
+        subject.walk_dogs
+      end
     end
 
-    it 'works with a real dog' do
-      dog = Lala.new
+    context 'with a real dog' do
+      let(:dog) { Lala.new }
 
-      expect { Walker.new([dog]) }.to_not raise_error
+      it 'works' do
+        expect { subject.walk_dogs }.to_not raise_error
+      end
     end
   end
 end
