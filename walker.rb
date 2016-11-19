@@ -5,9 +5,9 @@ class Walker
     @pack = pack
   end
 
+  attr_reader :pack
+
   def walk_dogs
     @pack.map &:walk
   end
-
-  attr_reader :pack
 end
