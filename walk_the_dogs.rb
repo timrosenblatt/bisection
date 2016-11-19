@@ -14,3 +14,7 @@ clyde = Walker.new pack
 clyde.walk_dogs
 
 puts 'All dogs walked!'
+
+clyde.feed_dogs
+
+puts 'All dogs fed'
