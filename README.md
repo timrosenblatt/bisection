@@ -158,6 +158,8 @@ Seriously, **Taco is always hungry.** He just isn't interested in you unless you
 
 Now that you're done, run `git bisect reset` to go back to the repo where you started.
 
+## Bisect Magic
+
 So here's the thing about `bisect`. The important thing is that you have some way of deciding if the code is "good" or "bad". Sometimes you might just be reading a piece of code, other times you might have an automated test like a spec file or an executable.
 
 You might be wondering "well, if I have a script, can't I use some code to automatically tell git if a command is good or not?" Git has you covered:
