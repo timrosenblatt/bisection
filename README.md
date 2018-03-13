@@ -183,3 +183,7 @@ bisect run success
 ```
 
 Nice. Run `git bisect reset` to get out of `bisect` mode and go back to the normal repo.
+
+# Other Notes
+
+http://bundler.io/v1.16/guides/git_bisect.html -- be sure to run `bundle install`
